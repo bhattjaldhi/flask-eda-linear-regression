@@ -33,3 +33,31 @@ This Flask-based web application allows users to upload a CSV file, perform line
     ```bash
         pip install -r requirements.txt
     ```
+
+### Usage
+
+1. Run the application:
+
+   ```bash
+   python app.py
+   ```
+   Visit http://127.0.0.1:5000 in your web browser.
+
+2. Upload a CSV file with the specified columns and analyze the data.
+
+### Docker
+Optionally, use Docker for containerization:
+
+1. Build the Docker image:
+
+    ```bash
+        docker build -t your-image-name:latest .
+    ```
+
+2. Run the Docker container:
+
+    ```bash
+    docker run -p 5000:5000 --name your-container-name your-image-name:latest
+    ```
+    Visit http://127.0.0.1:5000 in your web browser.
+
