@@ -24,7 +24,7 @@ This Flask-based web application allows users to upload a CSV file, perform line
 1. Clone the repository:
 
    ```bash
-   [git clone https://github.com/yourusername/your-repository.git](https://github.com/bhattjaldhi/flask-eda-linear-regression.git)
+   git clone https://github.com/bhattjaldhi/flask-eda-linear-regression.git
    cd your-repository
    ```
 
