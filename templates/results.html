@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Analysis Results</h1>
+        <p class="text-center">Predictions: {{ predictions }}</p>
+
+        <!-- Display the regression plot -->
+        <img src="data:image/png;base64,{{ regression_plot }}" alt="Regression Plot" class="img-fluid mx-auto d-block mt-3">
+
+        <!-- Display EDA Summary -->
+        <div class="mt-5">
+            <h2 class="text-center">Exploratory Data Analysis</h2>
+            {{ eda_summary | safe }}
+        </div>
+
+        <!-- Display EDA Pairplot -->
+        <div class="mt-5">
+            <h2 class="text-center">Pairplot</h2>
+            <img src="data:image/png;base64,{{ encoded_pairplot }}" alt="Pairplot" class="img-fluid mx-auto d-block">
+        </div>
+
+        <!-- Display EDA Distribution Plots -->
+        {% for plot in distribution_plots %}
+        <div class="mt-5">
+            <h2 class="text-center">Distribution of {{ plot['column'] }}</h2>
+            <img src="data:image/png;base64,{{ plot['plot'] }}" alt="Distribution Plot" class="img-fluid mx-auto d-block">
+        </div>
+        {% endfor %}
+
+        <!-- Display EDA Correlation Matrix Heatmap -->
+        <div class="mt-5">
+            <h2 class="text-center">Correlation Matrix Heatmap</h2>
+            <img src="data:image/png;base64,{{ encoded_corr_matrix }}" alt="Correlation Matrix Heatmap" class="img-fluid mx-auto d-block">
+        </div>
+    </div>
+</body>
+</html>

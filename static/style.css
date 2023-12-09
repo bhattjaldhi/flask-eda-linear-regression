@@ -1,0 +1,36 @@
+/* static/style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+button {
+    cursor: pointer;
+}
+
+p {
+    color: #333;
+}
+
+img {
+    margin: 20px 0;
+    max-width: 100%;
+}
